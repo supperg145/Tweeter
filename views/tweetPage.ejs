@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("head") %>
+</head>
+<body>
+    <%- include("header") %>
+    <h1><%= tweet.title %></h1>
+    <p><%= tweet.tweet %></p>
+    <p>Created at: <%= tweet.createdAt %></p>
+    <a href="/deletetweet/<%= tweet._id %>"><button>Delete</button></a>
+    <a href="/tweet/edit/<%= tweet._id %>"><button>Edit</button></a>
+</body>
+</html>

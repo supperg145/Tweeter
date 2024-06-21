@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    .error {
+      color: red;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+  <%- include ("head") %>
+  <body>
+    <%- include("header") %>
+    <form action="/tweet/edit/<%= tweet._id %>" method="POST">
+      <label for="title">Title</label>
+      <input type="text" name="title" value="<%= tweet.title %>" />
+      <label for="tweet">Tweet</label>
+      <input type="text" name="tweet" value="<%= tweet.tweet %>" />
+      <p class="error"><%= editTweetError %></p>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
